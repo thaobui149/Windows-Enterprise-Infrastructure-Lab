@@ -83,6 +83,9 @@ The following Group Policies were implemented to manage users and enforce securi
 
 ![GPO Configuration](gpo-configuration.png)
 
+### GPO Applied on Client
+
+![GPO Applied](gpo-applied-client.png)
 ### Password Policy
 
 Enforces strong passwords for all domain users.
