@@ -81,7 +81,7 @@ Users are added to their respective department groups.
 The following Group Policies were implemented to manage users and enforce security settings.
 ### Network Drive Mapping GPO
 
-![GPO Configuration](gpo-mapdrive.png)
+![GPO Configuration](gpo-configuration.png)
 
 ### Password Policy
 
