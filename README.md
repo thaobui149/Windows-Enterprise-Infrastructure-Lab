@@ -213,3 +213,23 @@ Solution:
 * File server permission models
 * PowerShell automation
 * Troubleshooting enterprise IT issues
+
+  ## Group Policy
+
+Several Group Policies were implemented to manage users and enforce security settings in the domain.
+
+### Password Policy
+Enforces strong passwords for domain users to improve security.
+
+### Account Lockout Policy
+Locks user accounts after multiple failed login attempts to prevent brute force attacks.
+
+### Network Drive Mapping
+Automatically maps department drives when users log in.
+
+Example:
+- HR users → H: drive → \\FS01\HR
+- Sales users → S: drive → \\FS01\Sales
+
+### Desktop Restrictions
+Standardizes the user environment and prevents unnecessary system changes.
