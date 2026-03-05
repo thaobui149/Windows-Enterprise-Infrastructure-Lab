@@ -32,7 +32,7 @@ Infrastructure components:
 
 Architecture diagram:
 
-![Architecture](architecture-diagram.png)
+![Architecture](diagram.png)
 
 ---
 
