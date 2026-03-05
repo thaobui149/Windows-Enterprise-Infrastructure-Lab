@@ -49,7 +49,7 @@ Company
  ├── Computers
  └── Servers
 ```
-Active Directory OU Structure:
+### Active Directory OU Structure
 
 ![OU Structure](ou-structure.png)
 
