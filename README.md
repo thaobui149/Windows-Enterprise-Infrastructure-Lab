@@ -17,7 +17,7 @@ Technologies used:
 
 ---
 
-# Architecture
+## Architecture
 
 Domain: **company.local**
 
@@ -36,7 +36,7 @@ Architecture diagram:
 
 ---
 
-# Active Directory Structure
+## Active Directory Structure
 
 The domain is organized using Organizational Units (OU) to separate users, computers, and servers.
 
@@ -49,6 +49,9 @@ Company
  ├── Computers
  └── Servers
 ```
+Active Directory OU Structure:
+
+![OU Structure](ou-structure.png)
 
 Purpose of this design:
 
@@ -59,7 +62,7 @@ Purpose of this design:
 
 ---
 
-# Security Groups
+## Security Groups
 
 Access control is managed using **security groups instead of assigning permissions directly to users**.
 
@@ -73,9 +76,9 @@ Users are added to their respective department groups.
 
 ---
 
-# Group Policy Configuration
+## Group Policy Configuration
 
-The following Group Policies were implemented:
+The following Group Policies were implemented to manage users and enforce security settings.
 
 ### Password Policy
 
@@ -96,11 +99,11 @@ Example:
 
 ### Desktop Restrictions
 
-Limits user customization and standardizes the desktop environment.
+Standardizes the desktop environment and limits unnecessary user customization.
 
 ---
 
-# File Server Configuration
+## File Server Configuration
 
 File shares are hosted on **FS01**.
 
@@ -124,13 +127,13 @@ Example:
 | HR     | HR_Group only    |
 | Sales  | Sales_Group only |
 
-This ensures that departments cannot access each other's files.
+This configuration ensures that departments cannot access each other's files.
 
 ---
 
-# PowerShell Automation
+## PowerShell Automation
 
-PowerShell scripts were used to automate user management.
+PowerShell scripts were used to automate common administrative tasks.
 
 Examples:
 
@@ -148,7 +151,7 @@ Reset user passwords when needed.
 
 ---
 
-# Troubleshooting Scenarios
+## Troubleshooting Scenarios
 
 Several common IT issues were simulated and resolved.
 
@@ -158,7 +161,7 @@ Cause: multiple incorrect login attempts.
 
 Solution:
 
-* Unlock account in **Active Directory Users and Computers**
+* Unlock the account in **Active Directory Users and Computers**
 
 ---
 
@@ -174,7 +177,7 @@ nslookup company.local
 
 Solution:
 
-* Configure client DNS to point to **DC01**
+* Configure client DNS to use **DC01**
 
 ---
 
@@ -190,7 +193,7 @@ gpresult /r
 Solution:
 
 * Verify OU structure
-* Ensure GPO is linked correctly
+* Ensure the GPO is correctly linked
 
 ---
 
@@ -205,7 +208,7 @@ Solution:
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
 * Windows Server administration
 * Active Directory design
@@ -213,23 +216,3 @@ Solution:
 * File server permission models
 * PowerShell automation
 * Troubleshooting enterprise IT issues
-
-  ## Group Policy
-
-Several Group Policies were implemented to manage users and enforce security settings in the domain.
-
-### Password Policy
-Enforces strong passwords for domain users to improve security.
-
-### Account Lockout Policy
-Locks user accounts after multiple failed login attempts to prevent brute force attacks.
-
-### Network Drive Mapping
-Automatically maps department drives when users log in.
-
-Example:
-- HR users → H: drive → \\FS01\HR
-- Sales users → S: drive → \\FS01\Sales
-
-### Desktop Restrictions
-Standardizes the user environment and prevents unnecessary system changes.
