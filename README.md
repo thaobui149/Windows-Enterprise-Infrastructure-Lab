@@ -49,6 +49,7 @@ Company
  ├── Computers
  └── Servers
 ```
+
 ### Active Directory OU Structure
 
 ![OU Structure](ou-structure.png)
@@ -79,13 +80,7 @@ Users are added to their respective department groups.
 ## Group Policy Configuration
 
 The following Group Policies were implemented to manage users and enforce security settings.
-### Network Drive Mapping GPO
 
-![GPO Configuration](gpo-configuration.png)
-
-### GPO Applied on Client
-
-![GPO Applied](gpo-applied-client.png)
 ### Password Policy
 
 Enforces strong passwords for all domain users.
@@ -93,6 +88,10 @@ Enforces strong passwords for all domain users.
 ### Account Lockout Policy
 
 Locks user accounts after multiple failed login attempts.
+
+### Desktop Restrictions
+
+Standardizes the desktop environment and limits unnecessary user customization.
 
 ### Network Drive Mapping
 
@@ -103,9 +102,13 @@ Example:
 * HR users → `H:` drive → `\\FS01\HR`
 * Sales users → `S:` drive → `\\FS01\Sales`
 
-### Desktop Restrictions
+### Network Drive Mapping GPO
 
-Standardizes the desktop environment and limits unnecessary user customization.
+![GPO Configuration](gpo-configuration.png)
+
+### GPO Applied on Client
+
+![GPO Applied](gpo-applied-client.png)
 
 ---
 
@@ -126,7 +129,11 @@ Permissions are configured using:
 * **Share permissions**
 * **Security groups**
 
-Example:
+### NTFS Permissions Example
+
+![NTFS Permissions](ntfs-permissions-hr.png)
+
+Example permission model:
 
 | Folder | Access           |
 | ------ | ---------------- |
